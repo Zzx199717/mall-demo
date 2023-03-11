@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import TheMenu from '../../component/TheMenu';
-import HomeRouter from '../../router/homeRouter';
+// import HomeRouter from '../../router/homeRouter';
 import './main.css'
+import { Outlet } from 'react-router-dom';
 const { Header, Content, Sider } = Layout;
 const items1 = ['1', '2', '3'].map((key) => ({
   key,
@@ -49,7 +50,7 @@ export default function Home() {
               background: colorBgContainer,
             }}
           >
-            <HomeRouter></HomeRouter>
+            <Outlet></Outlet>
           </Content>
         </Layout>
       </Layout>

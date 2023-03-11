@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { HomeFilled, UserOutlined, CodepenCircleFilled, AppstoreFilled } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation,  useNavigate } from 'react-router-dom';
 export default function TheMenu() {
     const getItem = (label, key, icon, children) => {
         return {
@@ -26,12 +26,12 @@ export default function TheMenu() {
         ]),
     ])
     const [openKeys,setopenKeys]=useState([])
-    const history = useHistory()
+    const navigate = useNavigate()
     const location = useLocation()
     // 点击菜单触发跳转
     const MenuClick = (res) => {
         console.log(res, 'res');
-        history.push(res.key)
+        navigate(res.key)
     }
     // 菜单展开或关闭的回调
     const onOpenChange = (res) => {
